@@ -26,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentTab, onTabChange }) => {
           </div>
           
           <div className="hidden md:flex space-x-1">
-            {Object.values(Tab).map((tab) => (
+            {Object.values(Tab).filter(tab => tab !== Tab.PRESS_ROOM).map((tab) => (
               <button
                 key={tab}
                 onClick={() => onTabChange(tab)}
@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentTab, onTabChange }) => {
                     : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'
                 }`}
               >
-                {tab === Tab.PRESS_ROOM ? 'Press Room' : tab.charAt(0) + tab.slice(1).toLowerCase()}
+                {tab.charAt(0) + tab.slice(1).toLowerCase()}
               </button>
             ))}
           </div>
@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentTab, onTabChange }) => {
       </div>
       {/* Mobile Menu Bar (Simplified) */}
       <div className="md:hidden flex justify-around border-t border-gray-100 bg-white/90 backdrop-blur pb-safe">
-        {Object.values(Tab).map((tab) => (
+        {Object.values(Tab).filter(tab => tab !== Tab.PRESS_ROOM).map((tab) => (
             <button
             key={tab}
             onClick={() => onTabChange(tab)}
@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentTab, onTabChange }) => {
                 currentTab === tab ? 'text-green-800' : 'text-gray-400'
             }`}
             >
-            {tab === Tab.PRESS_ROOM ? 'Press' : tab}
+            {tab}
             </button>
         ))}
       </div>
