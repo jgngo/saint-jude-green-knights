@@ -73,3 +73,5 @@ The project uses:
 - **Build command**: `pnpm build`
 - **Build directory**: `dist`
 - **Format**: Single Page Application (SPA)
+- **Styling**: Tailwind CSS classes directly in components (no external CSS files)
+- **Animations**: Custom CSS animations for smooth transitions
