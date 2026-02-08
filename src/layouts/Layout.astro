@@ -1,0 +1,22 @@
+---
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Saint Jude Green Knights Varsity Football Team" />
+    <title>Saint Jude Green Knights</title>
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
